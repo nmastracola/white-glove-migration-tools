@@ -1,13 +1,15 @@
+/* eslint-disable indent */
 import React, { Component } from 'react';
-import { Box,
+import { Anchor,
+         Box,
          Button,
          Collapsible,
-         Heading,
          Grommet,
-         Image
+         Image,
+         Menu
         } from 'grommet';
 import { SettingsOption,
-         Menu
+         Menu as MenuIcon
         } from 'grommet-icons'
 import logo from './assets/wgmt-logo.svg'
 import './App.css'
@@ -46,14 +48,14 @@ class App extends Component {
   }
 
   render() {
-    const { showMenubar} = this.state
-    const { showSidebar} = this.state
+    const { showMenubar } = this.state
+    const { showSidebar } = this.state
     return (
       <Grommet theme={theme}>
         <AppBar>
           {/* <Heading level='3' margin='none'> */}
           <Button
-           icon={<Menu />}
+           icon={<MenuIcon />}
            onClick={() => this.setState(prevState => ({ showMenubar: !prevState.showMenubar}))} />
             <Box height='50px' width='50px'>
             <Image 
@@ -70,13 +72,22 @@ class App extends Component {
         <Collapsible direction="horizontal" open={showMenubar}>
             <Box
               flex
-              width='medium'
+              width='small'
               background='light-2'
               elevation='small'
               align='center'
               justify='center'
             >
-              sidebar
+            <Menu 
+              label="Scripts"
+              items={[
+                { label: 'Find', onClick: () => {} },
+                { label: 'Find and Replace', onClick: () => {} },
+                { label: 'Bulk Find', onClick: () => {} },
+                { label: 'Course Settings', onClick: () => {} }
+              ]}
+            />
+            <Anchor href="#" primary label="TODO" size="medium"/>
             </Box>
           </Collapsible>
           <Box flex align='center' justify='center'>
@@ -85,7 +96,7 @@ class App extends Component {
           <Collapsible direction="horizontal" open={showSidebar}>
             <Box
               flex
-              width='medium'
+              width='small'
               background='light-2'
               elevation='small'
               align='center'

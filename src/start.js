@@ -1,6 +1,9 @@
 /* eslint-disable prefer-destructuring */
 const electron = require('electron')
 
+// const Store = require('electron-store')
+// const store = new Store
+
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 

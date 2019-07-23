@@ -11,12 +11,17 @@ import {
 } from 'grommet'
 import {
   Route,
-  Link,
+  NavLink,
+  withRouter,
 } from 'react-router-dom'
 import {
   Home,
   Find,
+  Far,
+  Bulk,
+  Settings,
 } from './routes/routes.jsx'
+import { SettingsOption } from "grommet-icons"
 import logo from './assets/wgmt-logo.svg'
 import './App.css'
 
@@ -49,6 +54,23 @@ const NavBar = props => (
   />
 )
 
+const HeadBar = props => (
+  <Box
+  gridArea="header"
+  background="light-5"
+  border={{
+    color: 'border',
+    size: 'xsmall',
+    style: 'solid',
+    side: 'bottom',
+  }}
+  justify="center"
+>
+  <Text alignSelf="center">PLACE CONTENT HERE</Text>
+</Box>
+)
+
+
 class App extends Component {
   state = {
 
@@ -71,38 +93,29 @@ class App extends Component {
             { name: 'main', start: [1, 1], end: [1, 1] },
           ]}
         >
-          <Box
-            gridArea="header"
-            background="light-5"
-            border={{
-              color: 'border',
-              size: 'xsmall',
-              style: 'solid',
-              side: 'bottom',
-            }}
-            justify="center"
-          >
-            <Text alignSelf="center">PLACE CONTENT HERE</Text>
-          </Box>
+        <HeadBar />
           <NavBar>
-            <Box height="50px" width="50px">
-              <Image
-                fit="contain"
-                src={logo}
-                margin={{ bottom: '10px' }}
-              />
-            </Box>
+            <NavLink to="/home">
+              <Box height="50px" width="50px" margin={{bottom: "20px"}}>
+                
+                <Image
+                  fit="contain"
+                  src={logo}
+                />
+                
+              </Box>
+            </NavLink>
             <Box>
               <Heading level="4" margin="none">Scripts</Heading>
-              <Text margin={{ left: '10px' }}>Find</Text>
-              <Text margin={{ left: '10px' }}>Find and Replace</Text>
-              <Text margin={{ left: '10px' }}>Bulk Find</Text>
+              <NavLink exact to="/find" activeClassName="selected"><Text margin={{ left: '10px' }}>Find</Text></NavLink>
+              <NavLink exact to="/far" activeClassName="selected"><Text margin={{ left: '10px' }}>Find and Replace</Text></NavLink>
+              <NavLink exact to="/bulk" activeClassName="selected"><Text margin={{ left: '10px' }}>Bulk Find</Text></NavLink>
             </Box>
             <Box
               alignSelf="center"
               margin={{ top: 'auto' }}
             >
-              <Link to="/settings">Settings</Link>
+              <NavLink exact to="/settings"><SettingsOption size='medium' color="white" /></NavLink>
             </Box>
           </NavBar>
           <Box direction="row" flex overflow={{ horizontal: 'hidden' }}>
@@ -113,7 +126,11 @@ class App extends Component {
               justify="center"
               background="light-3"
             >
-              <Route path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/find" component={Find} />
+              <Route exact path="/far" component={Far} />
+              <Route exact path="/bulk" component={Bulk} />
+              <Route exact path="/settings" component={Settings} />
             </Box>
           </Box>
         </Grid>

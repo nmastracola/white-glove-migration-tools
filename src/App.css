@@ -3,3 +3,12 @@
     height: 50px;
     stroke: #fff;
 }
+
+a {
+    color: #8f9293;
+    text-decoration: none;
+}
+
+.selected {
+    color: #fff;
+}

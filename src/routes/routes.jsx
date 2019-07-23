@@ -17,10 +17,22 @@ const Find = () => (
   </div>
 )
 
+const Far = () => (
+  <div>
+    <h1>Find and Replace Script Home</h1>
+  </div>
+)
+
+const Bulk = () => (
+  <div>
+    <h1>Bulk Find Script Home</h1>
+  </div>
+)
+
 const Settings = () => (
   <div>
     <h1>Settings view</h1>
   </div>
 )
 
-export { Home, Find, Settings }
+export { Home, Find, Far, Bulk, Settings }

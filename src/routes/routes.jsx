@@ -1,38 +1,41 @@
 import React, { Component } from 'react'
-import {
-  HashRouter as Router,
-  Route,
-  Link,
-} from 'react-router-dom'
+import { Box, Heading } from 'grommet'
+import { DataInput } from '../components/scriptInput'
 
 const Home = () => (
-  <div>
-    <h1>This is the home page</h1>
-  </div>
+  <Box>
+    <Heading level="1" alignSelf="center" margin="none" >This is the home page</Heading>
+  </Box>
 )
 
 const Find = () => (
-  <div>
-    <h1>Find Script Home</h1>
-  </div>
+  <Box
+  margin="medium"
+  >
+    <Heading level="3" alignSelf="center" margin="xsmall">Find Script</Heading>
+    <DataInput />
+  </Box>
+  
 )
 
 const Far = () => (
-  <div>
-    <h1>Find and Replace Script Home</h1>
-  </div>
+  <Box>
+    <Heading>Find and Replace Script Home</Heading>
+    <DataInput />
+  </Box>
 )
 
 const Bulk = () => (
-  <div>
-    <h1>Bulk Find Script Home</h1>
-  </div>
+  <Box>
+    <Heading>Bulk Find Script Home</Heading>
+    <DataInput />
+  </Box>
 )
 
 const Settings = () => (
-  <div>
-    <h1>Settings view</h1>
-  </div>
+  <Box>
+    <Heading>Settings view</Heading>
+  </Box>
 )
 
 export { Home, Find, Far, Bulk, Settings }

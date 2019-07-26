@@ -30,11 +30,25 @@ const theme = {
   global: {
     colors: {
       brand: '#1C4D68',
+      brand2: '#E02D28',
+      brand3: '#424242',
+      accent1: '#F9AC41',
+      accent2: '#D51F5E',
+      accent3: '#00A69C',
+      accent4: '#9D2064',
+      accent5: '#41AEBC',
+      accent6: '#A2B33B',
+      accent7: '#8F9293',
+      
     },
     font: {
-      family: 'Roboto',
-      size: '14px',
-      height: '20px',
+      family: "'ProximaNova', Arial, sans-serif",
+      face: `
+        @font-face {
+          font-family: "ProximaNova";
+          src: url("../src/fonts/proximaNova/proxima-nova-regular/proxima-nova-regular.woff") format('woff');
+        }
+      `,
     },
   },
 }
@@ -64,6 +78,7 @@ const HeadBar = props => (
     style: 'solid',
     side: 'bottom',
   }}
+  elevation="small"
   justify="center"
 >
   <Text alignSelf="center">PLACE CONTENT HERE</Text>
@@ -123,7 +138,7 @@ class App extends Component {
               gridArea="main"
               flex
               align="center"
-              justify="center"
+              justify="start"
               background="light-3"
             >
               <Route exact path="/home" component={Home} />

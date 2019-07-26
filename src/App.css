@@ -9,6 +9,10 @@ a {
     text-decoration: none;
 }
 
+.icon {
+    color: #8f9293
+}
+
 .selected {
     color: #fff;
 }

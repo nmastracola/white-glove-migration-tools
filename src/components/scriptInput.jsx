@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TextInput, Button, Box, Layer } from 'grommet'
+import { TextInput, Text, Button, Box, Layer, Heading} from 'grommet'
 
 class DataInput extends React.Component {
   constructor() {
@@ -29,16 +29,28 @@ class DataInput extends React.Component {
       // onClickOutside={() => {}}
     >
       <Box>
-        CONFIRM INST,COURSE,CRIT HERE
+      <Box direction="column" align="center">
+        <Heading level="6" margin="3px">Confirm your entries</Heading>
+        <Text>{this.state.text_inst} </Text>
+        <Text>{this.state.text_course}</Text>
+        <Text>{this.state.text_crit}</Text>
+        <Box border="medium" direction="row">
+          <Button margin="5px" label="Nope" onClick={() => {this.setState({active: false})}} />
+          <Button primary margin="5px" label="Confirm" onClick={() => {this.setState({active: false})} /*This will also submit the payload as well as closing the modal*/} />
+        </Box>
       </Box>
-      <Button label="close" onClick={() => {this.setState({active: false})}} />
+      </Box>
     </Layer>
     :null
     return (
-      <Box
+      <Box>
+        {layer}
+      <Box align="center">
+        <Box
         direction="row"
         gap="small"
-      >
+        pad="10px"
+        >
         Canvas Instance: 
         <TextInput
           border="brand"
@@ -63,7 +75,12 @@ class DataInput extends React.Component {
           label="Run"
           onClick={this._onClick} //When this is clicked, it will pass the information to the backend and wait for it to begin piping data to the frontend
         />
-       {layer}
+        {layer}
+        </Box>
+        <Box margin={{"top": "10px"}} height="large" width="80%" background="black" border="small" round="xsmall">
+        Output from Backend goes here
+        </Box>
+      </Box>
       </Box>
     )
   }

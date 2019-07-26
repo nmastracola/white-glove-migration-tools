@@ -39,7 +39,6 @@ const theme = {
       accent5: '#41AEBC',
       accent6: '#A2B33B',
       accent7: '#8F9293',
-      border: '#1C4D68'
     },
     font: {
       family: "'ProximaNova', Arial, sans-serif",
@@ -135,7 +134,7 @@ class App extends Component {
               alignSelf="center"
               margin={{ top: 'auto' }}
             >
-              <NavLink exact to="/settings"><SettingsOption size='medium' color="white" /></NavLink>
+              <NavLink exact to="/settings"><SettingsOption size='medium' color="#8f9293" activeClassName="selected" /></NavLink>
             </Box>
           </NavBar>
           <Box direction="row" flex overflow={{ horizontal: 'hidden' }}>

@@ -9,32 +9,30 @@ const Home = () => (
 )
 
 const Find = () => (
-  <Box
-  margin="medium"
-  >
+  <Box margin={{"top":"xsmall"}}>
     <Heading level="3" alignSelf="center" margin="xsmall">Find Script</Heading>
     <DataInput />
   </Box>
-  
+
 )
 
 const Far = () => (
-  <Box>
-    <Heading>Find and Replace Script Home</Heading>
+  <Box margin={{"top":"xsmall"}}>
+    <Heading level="3" alignSelf="center" margin="xsmall">Find and Replace Script Home</Heading>
     <DataInput />
   </Box>
 )
 
 const Bulk = () => (
-  <Box>
-    <Heading>Bulk Find Script Home</Heading>
+  <Box margin={{"top":"xsmall"}}>
+    <Heading level="3" alignSelf="center" margin="xsmall">Bulk Find Script Home</Heading>
     <DataInput />
   </Box>
 )
 
 const Settings = () => (
-  <Box>
-    <Heading>Settings view</Heading>
+  <Box margin={{"top":"xsmall"}}>
+    <Heading level="4" alignSelf="center" margin="xsmall">Your Settings</Heading>
   </Box>
 )
 

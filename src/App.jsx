@@ -39,7 +39,7 @@ const theme = {
       accent5: '#41AEBC',
       accent6: '#A2B33B',
       accent7: '#8F9293',
-      
+      border: '#1C4D68'
     },
     font: {
       family: "'ProximaNova', Arial, sans-serif",
@@ -50,6 +50,11 @@ const theme = {
         }
       `,
     },
+    focus: {
+      border: {
+        color: '#41AEBC'
+      }
+    }
   },
 }
 

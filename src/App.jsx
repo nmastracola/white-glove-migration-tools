@@ -9,11 +9,7 @@ import {
   Menu,
   Text,
 } from 'grommet'
-import {
-  Route,
-  NavLink,
-  withRouter,
-} from 'react-router-dom'
+import { Route, NavLink, } from 'react-router-dom'
 import {
   Home,
   Find,
@@ -21,10 +17,9 @@ import {
   Bulk,
   Settings,
 } from './routes/routes.jsx'
-import { SettingsOption } from "grommet-icons"
 import logo from './assets/wgmt-logo.svg'
 import './App.css'
-
+import SelectedIconWithRouter from './components/settingsIcon'
 
 const theme = {
   global: {
@@ -39,6 +34,7 @@ const theme = {
       accent5: '#41AEBC',
       accent6: '#A2B33B',
       accent7: '#8F9293',
+      selected: "#fff"
     },
     font: {
       family: "'ProximaNova', Arial, sans-serif",
@@ -72,7 +68,7 @@ const NavBar = props => (
   />
 )
 
-const HeadBar = props => (
+const HeadBar = (props) => (
   <Box
   gridArea="header"
   background="light-5"
@@ -85,16 +81,15 @@ const HeadBar = props => (
   elevation="small"
   justify="center"
 >
-  <Text alignSelf="center">PLACE CONTENT HERE</Text>
+  Set instance here instead?
 </Box>
 )
 
-
 class App extends Component {
-  state = {
+  constructor(props) {
+    super(props);
 
   }
-
   render() {
     return (
       <Grommet
@@ -112,16 +107,11 @@ class App extends Component {
             { name: 'main', start: [1, 1], end: [1, 1] },
           ]}
         >
-        <HeadBar />
+        <HeadBar location={this.props.location} />
           <NavBar>
             <NavLink to="/home">
               <Box height="50px" width="50px" margin={{bottom: "20px"}}>
-                
-                <Image
-                  fit="contain"
-                  src={logo}
-                />
-                
+                <Image fit="contain" src={logo} />
               </Box>
             </NavLink>
             <Box>
@@ -130,18 +120,16 @@ class App extends Component {
               <NavLink exact to="/far" activeClassName="selected"><Text margin={{ left: '10px' }}>Find and Replace</Text></NavLink>
               <NavLink exact to="/bulk" activeClassName="selected"><Text margin={{ left: '10px' }}>Bulk Find</Text></NavLink>
             </Box>
-            <Box
-              alignSelf="center"
-              margin={{ top: 'auto' }}
-            >
-              <NavLink exact to="/settings"><SettingsOption size='medium' color="#8f9293" activeClassName="selected" /></NavLink>
+            <Box className="iconBox" alignSelf="center" margin={{ top: 'auto' }}>
+              <NavLink exact to="/settings">
+                <SelectedIconWithRouter />
+              </NavLink>
             </Box>
           </NavBar>
           <Box direction="row" flex overflow={{ horizontal: 'hidden' }}>
             <Box
               gridArea="main"
               flex
-              align="center"
               justify="start"
               background="light-3"
             >

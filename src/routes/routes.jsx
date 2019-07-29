@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Box, Heading } from 'grommet'
 import { DataInput } from '../components/scriptInput'
+import { SettingsView } from '../components/settingsView'
 
 const Home = () => (
   <Box>
@@ -32,7 +33,8 @@ const Bulk = () => (
 
 const Settings = () => (
   <Box margin={{"top":"xsmall"}}>
-    <Heading level="4" alignSelf="center" margin="xsmall">Your Settings</Heading>
+    <Heading level="4" alignSelf="left" margin="xsmall">Your Settings</Heading>
+    <SettingsView/>
   </Box>
 )
 

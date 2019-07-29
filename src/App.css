@@ -9,10 +9,23 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: #c3c4c5;
+}
+
 .icon {
-    color: #8f9293
+    stroke: #8f9293
+}
+
+.iconBox:hover .icon{
+    stroke: #c3c4c5
 }
 
 .selected {
+    color: #fff;
+    stroke: #fff;
+}
+
+.selected:hover {
     color: #fff;
 }

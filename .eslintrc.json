@@ -18,6 +18,7 @@
       "no-continue": "off",
       "no-unreachable": "warn",
       "no-unused-vars": "warn",
+      "no-unused-expressions" : "off",
       "constructor-super": "warn",
       "valid-typeof": "warn",
       "quotes": [

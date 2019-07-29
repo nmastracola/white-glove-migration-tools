@@ -1,39 +1,39 @@
 import React, { Component } from 'react'
-import { Box, Heading } from 'grommet'
+import { Box, Typography } from '@material-ui/core'
 import { DataInput } from '../components/scriptInput'
 import { SettingsView } from '../components/settingsView'
 
 const Home = () => (
   <Box>
-    <Heading level="1" alignSelf="center" margin="none" >This is the home page</Heading>
+    <Typography variant="h1" >This is the home page</Typography>
   </Box>
 )
 
 const Find = () => (
-  <Box margin={{"top":"xsmall"}}>
-    <Heading level="3" alignSelf="center" margin="xsmall">Find Script</Heading>
+  <Box>
+    <Typography variant="h3">Find Script</Typography>
     <DataInput />
   </Box>
 
 )
 
 const Far = () => (
-  <Box margin={{"top":"xsmall"}}>
-    <Heading level="3" alignSelf="center" margin="xsmall">Find and Replace Script Home</Heading>
+  <Box>
+    <Typography variant="h3">Find and Replace Script Home</Typography>
     <DataInput />
   </Box>
 )
 
 const Bulk = () => (
-  <Box margin={{"top":"xsmall"}}>
-    <Heading level="3" alignSelf="center" margin="xsmall">Bulk Find Script Home</Heading>
+  <Box>
+    <Typography variant="h3">Bulk Find Script Home</Typography>
     <DataInput />
   </Box>
 )
 
 const Settings = () => (
-  <Box margin={{"top":"xsmall"}}>
-    <Heading level="4" alignSelf="left" margin="xsmall">Your Settings</Heading>
+  <Box>
+    <Typography variant="h4">Your Settings</Typography>
     <SettingsView/>
   </Box>
 )

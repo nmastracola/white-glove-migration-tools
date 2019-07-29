@@ -4,6 +4,7 @@
     stroke: #fff;
 }
 
+
 a {
     color: #8f9293;
     text-decoration: none;
@@ -12,7 +13,6 @@ a {
 a:hover {
     color: #c3c4c5;
 }
-
 .icon {
     stroke: #8f9293
 }
@@ -29,3 +29,26 @@ a:hover {
 .selected:hover {
     color: #fff;
 }
+
+
+.brand { 
+   color: #1C4D68
+}
+.brand2 { color: #E02D28;}
+.brand3 { color: #424242;}
+.accent1 { color: #F9AC41}
+.accent2 { color: #D51F5E}
+.accent3 { color: #00A69C}
+.accent4 { color: #9D2064}
+.accent5 { color: #41AEBC}
+.accent6 { color: #A2B33B}
+.accent7 {color:  #8F9293}
+.selected {color:  #fff}
+
+/* @font-face: {
+    family: "'ProximaNova', Arial, sans-serif",
+    face: `
+      @font-face {
+        font-family: "ProximaNova";
+        src: url("../src/fonts/proximaNova/proxima-nova-regular/proxima-nova-regular.woff") format('woff');
+       */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TextInput, Text, Button, Box, Layer, Heading} from 'grommet'
+import { TextField, Typography, Button, Box, Modal} from '@material-ui/core'
 
 class DataInput extends React.Component {
   constructor() {
@@ -23,25 +23,20 @@ class DataInput extends React.Component {
   render() {
     const { text_inst,text_course,text_crit } = this.state
     const layer = (this.state.active)
-      ?  <Layer
-      modal="true"
-      // onEsc={() => {this.setState({active: true})}}
-      // onClickOutside={() => {}}
-    >
-      <Box>
-      <Box direction="column" align="center">
-        <Heading level="6" margin="3px">Confirm your entries</Heading>
-        <Text>{this.state.text_inst} </Text>
-        <Text>{this.state.text_course}</Text>
-        <Text>{this.state.text_crit}</Text>
-        <Box border="medium" direction="row">
-          <Button margin="5px" label="Nope" onClick={() => {this.setState({active: false})}} />
-          <Button primary margin="5px" label="Confirm" onClick={() => {this.setState({active: false})} /*This will also submit the payload as well as closing the modal*/} />
-        </Box>
-      </Box>
-      </Box>
-    </Layer>
-    :null
+    //   <Modal>
+    //   <Box>
+    //   <Box direction="column" align="center">
+    //     <Typography variant="h6" margin="3px">Confirm your entries</Typography>
+    //     <Typography variant="p">{this.state.text_inst} </Typography>
+    //     <Typography variant="p">{this.state.text_course}</Typography>
+    //     <Typography variant="p">{this.state.text_crit}</Typography>
+    //     <Box border="medium" direction="row">
+    //       <Button margin="5px" label="Nope" onClick={() => {this.setState({active: false})}} />
+    //       <Button primary margin="5px" label="Confirm" onClick={() => {this.setState({active: false})} /*This will also submit the payload as well as closing the modal*/} />
+    //     </Box>
+    //   </Box>
+    //   </Box>
+    // </Modal>
     return (
       <Box>
         {layer}
@@ -51,20 +46,22 @@ class DataInput extends React.Component {
         gap="small"
         pad="10px"
         >
-        Canvas Instance: 
-        <TextInput
-          border="brand"
+        <TextField
+          label="Canvas Instance"
+          variant="filled"
           margin="20px"
           value={text_inst}
           onChange={event => this.setState({ text_inst: event.target.value})}
         />
-        Course Number:
-        <TextInput
+        <TextField
+          label="Course Number"
+          variant="filled"
           value={text_course}
           onChange={event => this.setState({ text_course: event.target.value})}
         />
-        Search Criteria:
-        <TextInput
+        <TextField
+          label="Search Criteria"
+          variant="filled"
           value={text_crit}
           onChange={event => this.setState({ text_crit: event.target.value})}
         />

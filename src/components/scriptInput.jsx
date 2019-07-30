@@ -38,13 +38,12 @@ class DataInput extends React.Component {
     //   </Box>
     // </Modal>
     return (
-      <Box>
+      <Box border={1} width={1}>
         {layer}
       <Box align="center">
         <Box
         direction="row"
-        gap="small"
-        pad="10px"
+        
         >
         <TextField
           label="Canvas Instance"
@@ -74,7 +73,7 @@ class DataInput extends React.Component {
         />
         {layer}
         </Box>
-        <Box margin={{"top": "10px"}} height="large" width="80%" background="black" border="small" round="xsmall">
+        <Box height="large" width="80%" background="black" border={1}>
         Output from Backend goes here
         </Box>
       </Box>

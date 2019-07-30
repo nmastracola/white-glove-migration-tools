@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
+  drawerHeader: {
+    color: '#fff'
+  },
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
@@ -28,18 +31,13 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
   },
-  container: {
-    maxWidthXl: "100vw"
-  }
 }))
 
 export default function App() {
     const classes = useStyles()
     return (
-        <Container fixed>
+        <div className={classes.root}>
           <CssBaseline/>
-          <Grid container>
-            <Grid item xl={2} spacing={0}>
               <Drawer variant="permanent" anchor="left" className={classes.drawer} classes={{paper: classes.drawerPaper}}>
                 <NavLink to="/home">
                   <Box height="50px" width="50px">
@@ -47,21 +45,19 @@ export default function App() {
                   </Box>
                 </NavLink>
                 <List>
-                  <Typography variant="h4" margin="none">Scripts</Typography>
-                  <NavLink exact to="/find" activeClassName="selected"><ListItem className="nav-link">Find</ListItem></NavLink>
-                  <NavLink exact to="/far" activeClassName="selected"><ListItem className="nav-link">Find and Replace</ListItem></NavLink>
-                  <NavLink exact to="/bulk" activeClassName="selected"><ListItem className="nav-link">Bulk Find</ListItem></NavLink>
+                  <Typography variant="h4" margin="none" className={classes.drawerHeader}>Scripts</Typography>
+                  <NavLink exact to="/find" activeClassName="selected"><ListItem button className="nav-link">Find</ListItem></NavLink>
+                  <NavLink exact to="/far" activeClassName="selected"><ListItem button className="nav-link">Find and Replace</ListItem></NavLink>
+                  <NavLink exact to="/bulk" activeClassName="selected"><ListItem button className="nav-link">Bulk Find</ListItem></NavLink>
                 </List>
-                <Box className="iconBox" alignSelf="center" margin={{ top: 'auto' }}>
+                <Box height="auto" className="iconBox" alignSelf="center" margin={{ top: 'auto' }}>
                   <NavLink exact to="/settings">
                     <SelectedIconWithRouter />
                   </NavLink>
                 </Box>
               </Drawer>
-            </Grid>
-              <Grid item direction="column">
-                <AppBar position="static"><Toolbar>Content TBD</Toolbar></AppBar>
-                <main>
+                <AppBar position="fixed" className={classes.appBar}><Toolbar>Content TBD</Toolbar></AppBar>
+                <main className={classes.content}>
                   <Box>
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/find" component={Find} />
@@ -70,8 +66,6 @@ export default function App() {
                     <Route exact path="/settings" component={Settings} />
                   </Box>
                 </main>
-              </Grid>
-            </Grid>
-        </Container>
+        </div>
     )
 }

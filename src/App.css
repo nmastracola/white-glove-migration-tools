@@ -13,6 +13,11 @@ a {
 a:hover {
     color: #c3c4c5;
 }
+
+.data-button {
+    background: #E02D28;
+   }
+
 .icon {
     stroke: #8f9293
 }
@@ -32,18 +37,37 @@ a:hover {
 
 
 .brand { 
-   color: #1C4D68
+   color: #1C4D68;
+   background: #E02D28
 }
-.brand2 { color: #E02D28;}
-.brand3 { color: #424242;}
-.accent1 { color: #F9AC41}
-.accent2 { color: #D51F5E}
-.accent3 { color: #00A69C}
-.accent4 { color: #9D2064}
-.accent5 { color: #41AEBC}
-.accent6 { color: #A2B33B}
-.accent7 {color:  #8F9293}
-.selected {color:  #fff}
+
+.brand3 {
+     color: #424242;
+    }
+.accent1 {
+     color: #F9AC41
+    }
+.accent2 {
+     color: #D51F5E
+    }
+.accent3 {
+     color: #00A69C
+    }
+.accent4 {
+     color: #9D2064
+    }
+.accent5 {
+     color: #41AEBC
+    }
+.accent6 {
+     color: #A2B33B
+    }
+.accent7 {
+    color:  #8F9293
+}
+.selected {
+    color:  #fff
+}
 
 /* @font-face: {
     family: "'ProximaNova', Arial, sans-serif",

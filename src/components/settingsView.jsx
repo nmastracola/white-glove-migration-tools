@@ -6,7 +6,7 @@ class SettingsView extends React.Component {
 
   render() {
     return (
-    <Box margin={{"left": "10px"}} border="3px" width="33%">
+    <Box margin={{"left": "10px"}} width="33%">
       <Box>
       Canvas Token: <TextField placeholder="Token" />
       Log Output Location:<input type="file" webkitdirectory  placeholder="Output Location" />

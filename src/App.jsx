@@ -12,11 +12,13 @@ const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    height: "100vh"
   },
   drawerHeader: {
     color: '#fff'
   },
   appBar: {
+    backgroundColor: "gray",
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
   },
@@ -36,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 export default function App() {
     const classes = useStyles()
     return (
-        <div className={classes.root}>
+        <Box className={classes.root}>
           <CssBaseline/>
               <Drawer variant="permanent" anchor="left" className={classes.drawer} classes={{paper: classes.drawerPaper}}>
                 <NavLink to="/home">
@@ -57,7 +59,7 @@ export default function App() {
                 </Box>
               </Drawer>
                 <AppBar position="fixed" className={classes.appBar}><Toolbar variant="dense">Content TBD</Toolbar></AppBar>
-                <main className={classes.content}>
+                <Box className={classes.content}>
                   <Box display="flex" justifyContent="center">
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/find" component={Find} />
@@ -65,7 +67,7 @@ export default function App() {
                     <Route exact path="/bulk" component={Bulk} />
                     <Route exact path="/settings" component={Settings} />
                   </Box>
-                </main>
-        </div>
+                </Box>
+        </Box>
     )
 }

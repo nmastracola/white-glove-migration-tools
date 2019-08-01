@@ -83,4 +83,9 @@ const fs                = require("fs");
 
 // module.exports = getPages(); 
 
+function find() {
+  console.log("This is text from the backend")
+}
+module.exports = find();
+
 

@@ -10,7 +10,7 @@ const Home = () => (
 )
 
 const Find = () => (
-  <Box m={10} alignItems="center" width={1}>
+  <Box m={10} alignItems="center" width={1} height="80vh">
     <Typography align="center" variant="h3">Find Script</Typography>
     <DataInput />
   </Box>
@@ -18,21 +18,21 @@ const Find = () => (
 )
 
 const Far = () => (
-  <Box height="100%" m={10} width={1}>
+  <Box m={10} width={1}>
     <Typography align="center" variant="h3">Find and Replace Script Home</Typography>
     <DataInput />
   </Box>
 )
 
 const Bulk = () => (
-  <Box height="100%" m={10} width={1}>
+  <Box m={10} width={1}>
     <Typography align="center" variant="h3">Bulk Find Script Home</Typography>
     <DataInput />
   </Box>
 )
 
 const Settings = () => (
-  <Box height="100%" m={10} width={1}>
+  <Box m={10} width={1}>
     <Typography align="center" variant="h4">Your Settings</Typography>
     <SettingsView/>
   </Box>

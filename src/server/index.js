@@ -1,7 +1,7 @@
 const https = require('https')
 const express = require('express')
 const expressWS = require('express-ws')
-// const find = require('./routes/find')
+const find = require('./routes/find')
 
 const app = express();
 const server = https.createServer(app)
@@ -20,3 +20,5 @@ app.ws('/find', (ws, req) => {
 
 const port = 443
 app.listen(port, console.log("listening on port " + port))
+
+module.exports = app
